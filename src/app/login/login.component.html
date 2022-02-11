@@ -1,0 +1,25 @@
+<div class="container-fluide" style="width: 30%; margin: 5rem auto; border: 1px solid gray; padding: 2rem;">
+<form #signinForm="ngForm" (ngSubmit)="onSubmit(signinForm)">
+    <div class="form-floating" >
+      <input name="email" class="form-control" id="floatingInput"
+        placeholder="name@example.com" [(ngModel)]="email" required autofocus >
+      <label for="floatingInput">Email address</label>
+    </div>
+    <div class="form-floating" style="margin: 3rem 0;">
+      <input type="password" name="password" required autofocus [(ngModel)]="password"  class="form-control" id="floatingPassword" placeholder="Password">
+      <label for="floatingPassword">Password</label>
+    </div>
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Sign in</button>
+    <div class="alert alert-danger" role="alert"
+    *ngIf="isFormValid"
+    >
+      <p>
+Please fill all fields </p>
+    </div>
+    <div class="alert alert-danger" role="alert" 
+    *ngIf="areCreadintelValid"
+    >
+ <p>  invalid user or password </p>
+          </div>
+  </form>
+</div>
